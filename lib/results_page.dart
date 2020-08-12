@@ -17,6 +17,8 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
                 style: kTitleTextStyle,
