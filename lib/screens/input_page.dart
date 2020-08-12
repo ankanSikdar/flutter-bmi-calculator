@@ -8,6 +8,7 @@ import '../components/bottom_button.dart';
 import '../components/round_icon_button.dart';
 import '../components/icon_content.dart';
 import '../constants.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 enum Gender { male, female }
 
@@ -17,7 +18,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender;
+  Gender selectedGender = Gender.female;
   int height = 180;
   int weight = 60;
   int age = 22;
@@ -218,10 +219,17 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonTitle: 'CALCULATE',
             onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: weight);
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ResultsPage(),
+                  builder: (context) => ResultsPage(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResults(),
+                    interpretation: calc.getInterpretation(),
+                  ),
                 ),
               );
             },
