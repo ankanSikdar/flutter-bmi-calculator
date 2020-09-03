@@ -1,6 +1,8 @@
-# bmi_calculator
+# BMI Calculator
+A Simple Flutter app that given the details calculates the BMI of that person.
 
-A new Flutter application.
+## Screenshots
+<img src="screenshots/ss1.png" width = 250> <img src="screenshots/ss2.png" width = 250>
 
 ## Getting Started
 
